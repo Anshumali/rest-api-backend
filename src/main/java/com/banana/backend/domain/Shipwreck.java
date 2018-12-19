@@ -6,9 +6,7 @@ import javax.persistence.*;
 public class Shipwreck {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	@Basic(optional = false)
-	@SequenceGenerator(name = "seq", sequenceName = "shipwreck_seq", allocationSize = 1)
 	Long id;
 
 	String name;
