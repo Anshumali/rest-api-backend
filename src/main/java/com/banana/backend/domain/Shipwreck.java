@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Shipwreck {
 
 	@Id
-	@Basic(optional = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 
 	String name;

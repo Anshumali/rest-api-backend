@@ -1,12 +1,15 @@
+CREATE SEQUENCE shipwreck_id_seq;
 
-CREATE TABLE SHIPWRECK (
-    ID BIGINT SERIAL  PRIMARY KEY,
-    CONDITION VARCHAR(255),
-    DEPTH INTEGER,
-    DESCRIPTION VARCHAR(255),
-    LATITUDE double,
-    LONGITUDE double,
-    NAME VARCHAR(255),
-    YEAR_DISCOVERED INTEGER
-);
+CREATE TABLE public.shipwreck
+(
+    id bigint NOT NULL DEFAULT nextval('shipwreck_id_seq'::regclass),
+    condition varchar(255),
+    depth integer,
+    description varchar(255) COLLATE pg_catalog."default",
+    latitude double precision,
+    longitude double precision,
+    name varchar(255) COLLATE pg_catalog."default",
+    year_discovered integer,
+    CONSTRAINT shipwreck_pkey PRIMARY KEY (id)
+)
 
